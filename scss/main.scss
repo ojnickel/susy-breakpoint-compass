@@ -1,2 +1,13 @@
 @import "normalize";
 @import "susy";
+
+$susy: (
+    columns: 16,
+    debug: (image: show)
+);
+
+.container {
+    height: 100vh;
+    background: #222;
+    @include container();
+}
