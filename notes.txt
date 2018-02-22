@@ -1,0 +1,3 @@
+14.4 border-box-sizing:
+dieses Mixin von Susy berechnet die Breite (width) -> content box +
+ padding box + border box -> d.h. alles wird gleichmäßig
