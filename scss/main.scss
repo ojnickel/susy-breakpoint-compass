@@ -3,12 +3,16 @@
 
 $susy: (
   columns: 16,
-  debug: (image: show)
+  debug: (image: show),
+  global-box-sizing: border-sizing
 );
+
+@include border-box-sizing;
+
 
 .container {
   height: 100vh;
-  @include container();
+  @include container(1140px);
 }
 
 .sidebar-left {
@@ -29,6 +33,7 @@ $susy: (
   .teaser {
     height: 20vh;
     background-color: rgba(100, 30, 100, 0.6);
+    padding: gutter(10);
     @include span(2 of 10);
 
     &:nth-child(5n) {
