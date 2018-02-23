@@ -1,5 +1,6 @@
 @import "normalize";
 @import "susy";
+@import "breakpoint";
 
 $susy: (
   columns: 16,
@@ -9,21 +10,30 @@ $susy: (
 
 @include border-box-sizing;
 
+$medium-screen: 720px;
+
 
 .container {
-  height: 100vh;
   @include container(1140px);
 }
 
 .sidebar-left {
   height: 80vh;
   background-color: rgba(0, 100, 100, 0.6);
-  @include span(2 of 16);
+  display: none;
+
+  @include breakpoint($medium-screen) {
+    display: block;
+    @include span(2 of 16);
+  }
 }
 
 .main {
   height: 80vh;
-  @include span(10 of 16);
+
+  @include breakpoint($medium-screen) {
+    @include span(10 of 16);
+  }
 
   .content {
     height: 60vh;
@@ -34,10 +44,14 @@ $susy: (
     height: 20vh;
     background-color: rgba(100, 30, 100, 0.6);
     padding: gutter(10);
-    @include span(2 of 10);
+    @include span(10 of 10);
 
-    &:nth-child(5n) {
-      @include last;
+    @include breakpoint($medium-screen) {
+      @include span(2 of 10);
+
+      &:nth-child(5n) {
+        @include last;
+      }
     }
   }
 }
@@ -45,7 +59,12 @@ $susy: (
 .sidebar-right {
   height: 80vh;
   background-color: rgba(100, 100, 30, 0.6);
-  @include span(4 of 16 last);
+  clear: both;
+
+  @include breakpoint($medium-screen) {
+    clear: none;
+    @include span(4 of 16 last);
+  }
 }
 
 .footer {

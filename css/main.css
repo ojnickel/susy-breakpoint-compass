@@ -451,9 +451,8 @@ textarea {
   box-sizing: border-box;
 }
 
-/* line 13, ../scss/main.scss */
+/* line 16, ../scss/main.scss */
 .container {
-  height: 100vh;
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
@@ -470,52 +469,80 @@ textarea {
   clear: both;
 }
 
-/* line 18, ../scss/main.scss */
+/* line 20, ../scss/main.scss */
 .sidebar-left {
   height: 80vh;
   background-color: rgba(0, 100, 100, 0.6);
-  width: 11.39241%;
-  float: left;
-  margin-right: 1.26582%;
+  display: none;
+}
+@media (min-width: 720px) {
+  /* line 20, ../scss/main.scss */
+  .sidebar-left {
+    display: block;
+    width: 11.39241%;
+    float: left;
+    margin-right: 1.26582%;
+  }
 }
 
-/* line 24, ../scss/main.scss */
+/* line 31, ../scss/main.scss */
 .main {
   height: 80vh;
-  width: 62.02532%;
-  float: left;
-  margin-right: 1.26582%;
 }
-/* line 28, ../scss/main.scss */
+@media (min-width: 720px) {
+  /* line 31, ../scss/main.scss */
+  .main {
+    width: 62.02532%;
+    float: left;
+    margin-right: 1.26582%;
+  }
+}
+/* line 38, ../scss/main.scss */
 .main .content {
   height: 60vh;
   background-color: rgba(100, 0, 0, 0.6);
 }
-/* line 33, ../scss/main.scss */
+/* line 43, ../scss/main.scss */
 .main .teaser {
   height: 20vh;
   background-color: rgba(100, 30, 100, 0.6);
   padding: 2.04082%;
-  width: 18.36735%;
+  width: 100%;
   float: left;
-  margin-right: 2.04082%;
-}
-/* line 39, ../scss/main.scss */
-.main .teaser:nth-child(5n) {
-  float: right;
+  margin-left: 0;
   margin-right: 0;
 }
+@media (min-width: 720px) {
+  /* line 43, ../scss/main.scss */
+  .main .teaser {
+    width: 18.36735%;
+    float: left;
+    margin-right: 2.04082%;
+  }
+  /* line 52, ../scss/main.scss */
+  .main .teaser:nth-child(5n) {
+    float: right;
+    margin-right: 0;
+  }
+}
 
-/* line 45, ../scss/main.scss */
+/* line 59, ../scss/main.scss */
 .sidebar-right {
   height: 80vh;
   background-color: rgba(100, 100, 30, 0.6);
-  width: 24.05063%;
-  float: right;
-  margin-right: 0;
+  clear: both;
+}
+@media (min-width: 720px) {
+  /* line 59, ../scss/main.scss */
+  .sidebar-right {
+    clear: none;
+    width: 24.05063%;
+    float: right;
+    margin-right: 0;
+  }
 }
 
-/* line 51, ../scss/main.scss */
+/* line 70, ../scss/main.scss */
 .footer {
   height: 20vh;
   background-color: rgba(0, 30, 100, 0.6);
